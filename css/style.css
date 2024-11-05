@@ -1,0 +1,181 @@
+@font-face {
+    font-family: "Converse";
+    src: url(../font/COVEARG_.TTF);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Converse";
+}
+
+body{
+    overflow: hidden;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    display: block;
+    margin:50px auto;
+    width:30%;
+}
+input, select{
+    display: block;
+    background-color: white;
+    border:solid 1px rgb(3, 0, 52);
+    border-radius:8px;
+    margin:10px 0;
+    width:100%;
+    padding:10px;
+    font-size: 0.9rem;
+
+    font-family: "Converse";
+}
+
+::placeholder{
+    color:rgba(3, 0, 52, 0.6);
+    font-family: "Converse";
+    font-size: 0.7rem;
+}
+
+.inputWrapper{
+    display: flex;
+    gap:5px;
+    position: relative;
+}
+
+input[type="submit"]{
+   width:100%;
+    color:white;
+    background-color:rgb(3, 0, 52);
+    transition: all 1s ease;
+    cursor: pointer;
+}
+#submit{
+    position: relative;
+    width:40%;
+    margin-left:auto;
+}
+
+#submit::before{
+    content:"\21E8";
+    width: 25px;
+    height: 25px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 22px;
+    font-size:1.2rem;
+    background: rgb(255,0,0);
+    background: linear-gradient(124deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(255,255,255,1) 100%);
+        border-radius: 50%;
+    padding:10px;
+    border:solid 3px white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+    position: absolute;
+    left:-25px;
+    top:50%;
+    transform: translate(0,-50%);
+    transition: all 1s ease;
+}
+
+label{
+    font-family: Roboto;
+}
+
+
+#submit:hover::before{
+  transform: translate(180px, -50%) rotate(180deg);
+  box-shadow: -2px -2px 2px rgba(0,0,0,0.7);
+  background: linear-gradient(20deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+
+#submit:hover input[type="submit"]{
+    background-color: white;
+    color:rgb(3, 0, 52);
+}
+
+.errorInput.error{
+    color:red;
+    font-size: 0.8rem;
+    font-family:"Roboto";
+    position: absolute;
+    left:0;
+    bottom:-5px
+}
+
+.errorDiv.error{
+    font-family: Roboto;
+    font-weight:bold;
+    margin: auto;
+    font-size:1.1rem;
+    color:red;
+    text-align:center;
+    padding:10px;
+    background-color: rgb(238, 164, 164);
+    border-radius:5px;
+
+}
+
+/* Menu */
+
+nav{
+    position:relative;
+}
+
+#burger{
+    width:50px;
+    position: absolute;
+    list-style: none;
+    cursor: pointer;
+    right:100px;
+    top:20px;
+    & li{
+        height:2px;
+        margin:10px 0;
+        background-color: rgb(3, 0, 52);
+        transition: all .5s ease;
+    }
+    &.active{
+        & li:first-of-type{
+            transform: translate(4px, 10px) rotate(45deg);
+        }
+        & li:nth-of-type(2){
+            opacity: 0;
+        }
+        & li:last-of-type{
+            transform: translate(4px, -13px) rotate(-45deg);
+        }
+    }
+}
+
+#menu{
+    position: absolute;
+    list-style: none;
+    transform: translateX(1000px);
+    top:70px;
+    right:38px;
+    padding:20px 50px;
+    background-color: rgb(3, 0, 52);
+    transition: all .6s ease;
+    &.active{
+       transform: translateX(0);
+    }
+    & li{
+        text-align: center;
+        margin:10px 0;
+        & a{
+            color: white;
+            text-decoration: none;
+            &:hover{
+                color: red;
+            }
+        }
+    }
+}
+
